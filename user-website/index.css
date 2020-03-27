@@ -1,0 +1,10 @@
+header{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+header h1{
+	width : 200px;
+	margin-left: 800px;
+}

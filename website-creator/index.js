@@ -1,8 +1,10 @@
+// start method
 function start(){
-	// add draggable attribute to all list elements of elements-container class
+	// add draggable and dragstart attributes to all list elements of elements-container class
 	var designElements = document.querySelectorAll(".elements-container li");
 	designElements.forEach(function(element){
 		element.setAttribute("draggable","true");
+		element.setAttribute("ondragstart","startDrag(this,event)");
 	});
 	// add toggle open and close to elements-container
 	var headerNumber3 = document.querySelector("h3");
@@ -18,4 +20,10 @@ function start(){
 			elementContainer.style.borderWidth = "0px";
 		}
 	});
+}
+
+//on drag start
+function startDrag(element,ev){
+	var imgSource = "/website-creator/"+element.firstChild.getAttribute("src");
+	ev.dataTransfer.setData("img-src",imgSource);
 }
